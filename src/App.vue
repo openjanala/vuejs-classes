@@ -1,17 +1,39 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h2>{{ title }}</h2>
+    <Navbar></Navbar>
+    <AllFriends :friends="friends"></AllFriends>
+    <OnlineFriends :friends="friends"></OnlineFriends>
+    <Footer></Footer>
   </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
 
+<script>
+import Navbar from './components/Navbar.vue'
+import Footer from './components/Footer.vue'
+import AllFriends from './components/AllFriends.vue'
+import OnlineFriends from './components/OnlineFriends.vue'
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  name: 'app',
+  data(){
+    return{
+      title:'Hurray! our vue apps are running:)',
+       friends:[
+               {name:'A', online:true}, 
+               {name:'B', online:true}, 
+               {name:'C', online:false}, 
+               {name:'D', online:false}, 
+               {name:'E', online:true}
+              
+            ]
+    }
+  },
+  components:{
+Navbar,
+Footer,
+AllFriends,
+OnlineFriends
   }
 }
 </script>
