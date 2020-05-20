@@ -3,7 +3,7 @@
             <h1>Posts</h1><hr>
             <div v-for="(post) in posts" :key="post.id">
                 <h2>{{post.id}}. {{post.title}}</h2>
-                <p>{{post.body}}</p><hr>
+                <p>{{post.body | snippet}}</p><hr>
             </div>
         </div>
 </template>
